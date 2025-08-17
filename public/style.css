@@ -1,0 +1,173 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+/* Aurora effect (soft blue/purple gradient) */
+.aurora {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/atmosphere/multicoloured-aurora.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: -1;
+}
+
+
+@keyframes auroraMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.search-container input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-container button {
+    background: #f57c00;
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.search-container button:hover {
+    background: #ef6c00;
+}
+
+/* Weather Card */
+.weather-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    min-width: 200px;
+}
+
+#locationName {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#temp {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#realFeel {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+/* Main Content (Radar + News) */
+.main-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.radar-section, .news-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+}
+
+/* News List */
+#headlines {
+    list-style: none;
+}
+
+#headlines li {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.news-img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-source {
+    font-size: 12px;
+    color: gray;
+}
+
+#headlines a {
+    text-decoration: none;
+    color: #1a237e;
+    font-weight: 500;
+}
+
+#headlines a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .search-container {
+        min-width: 90%;
+    }
+}
