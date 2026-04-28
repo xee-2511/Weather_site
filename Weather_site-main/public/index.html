@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="aurora"></div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input id="cityInput" type="text" placeholder="Search your Address, City or Zip Code">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Weather Card -->
+        <div class="weather-card">
+            <div id="locationName">--</div>
+            <div id="temp">--°C</div>
+            <div id="realFeel">RealFeel: --°C</div>
+            <img id="weatherIcon" src="" alt="" class="weather-icon" style="display:none;">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Radar -->
+        <section class="radar-section">
+            <h2>India Weather Radar</h2>
+            <iframe src="https://www.rainviewer.com/map.html?loc=20,78,5" width="100%" height="500" frameborder="0"></iframe>
+        </section>
+
+        <!-- News -->
+        <section class="news-section">
+            <h2>Top Headlines</h2>
+            <ul id="headlines"></ul>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
