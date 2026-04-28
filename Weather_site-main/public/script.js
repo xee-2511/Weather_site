@@ -1,9 +1,8 @@
 const DEFAULT_CITY = "Delhi";
 
-// Fetch Weather
 async function getWeather(city) {
   try {
-    const response = await fetch(`/api/weather?city=${city}`);  //  fixed
+    const response = await fetch(`/api/weather?city=${city}`);
     
     if (!response.ok) {
       const errorData = await response.json();
@@ -18,7 +17,7 @@ async function getWeather(city) {
     document.getElementById("realFeel").textContent = `RealFeel: ${Math.round(data.main.feels_like)}°C`;
 
     const iconEl = document.getElementById("weatherIcon");
-    iconEl.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;  //  https
+    iconEl.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     iconEl.alt = data.weather[0].description;
     iconEl.style.display = "block";
 
@@ -28,10 +27,9 @@ async function getWeather(city) {
   }
 }
 
-// Fetch News
 async function getNews() {
     try {
-        const res = await fetch(`/api/news`);  // fixed
+        const res = await fetch(`/api/news`);
         const data = await res.json();
 
         if (!data.articles) {
